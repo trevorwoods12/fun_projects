@@ -6,8 +6,8 @@ from PIL import Image
 import numpy as np
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
-SOURCE_FOLDER = "C:\\Users\\trevo\\OneDrive\\Desktop\\Clients\\receipts"
-DEST_FOLDER = "C:\\Users\\trevo\\OneDrive\\Desktop\\Clients\\2024"
+SOURCE_FOLDER = "C:\\Users\\...\..."
+DEST_FOLDER = "C:\\Users\\...\..."
 os.makedirs(DEST_FOLDER, exist_ok=True)
 
 def preprocess_image(image_path):
@@ -65,9 +65,9 @@ for filename in os.listdir(SOURCE_FOLDER):
             text = pytesseract.image_to_string(Image.open(temp_path))
 
             if "2024" in text:
-                print(f"✔ Found 2024 in: {filename}")
+                print(f"Found 2024 in: {filename}")
                 shutil.copy(file_path, os.path.join(DEST_FOLDER, filename))
             else:
-                print(f"✘ No 2024 in: {filename}")
+                print(f"No 2024 in: {filename}")
         except Exception as e:
             print(f"Error with {filename}: {e}")
